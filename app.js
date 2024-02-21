@@ -35,6 +35,9 @@ app.get("/innovation-tecnhlogy", (req, res)=>{
 app.get("/technlogy", (req, res)=>{
     res.sendFile(__dirname + "/views/technlogy.html")
 })
+app.get("/smarthphone", (req, res)=>{
+    res.sendFile(__dirname + "/views/smarthphone.html")
+})
 app.get("/about", (req, res)=>{
     res.sendFile(__dirname + "/views/about.html")
 })
