@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 let session = require("express-session")
@@ -40,6 +39,13 @@ app.get("/smarthphone", (req, res)=>{
 })
 app.get("/about", (req, res)=>{
     res.sendFile(__dirname + "/views/about.html")
+})
+app.get("/robots.txt", (req, res)=>{
+    res.sendFile(__dirname + "/robots.txt")
+})
+
+app.get("/sitemap.xml", (req, res)=>{
+    res.sendFile(__dirname + "/sitemap.xml")
 })
 
 io.on('connection', (socket) => {
