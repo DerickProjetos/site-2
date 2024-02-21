@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
       
         io.to(socket.id).emit("chat", b)
         b++
-        if(b>4){
+        if(b>20){
             clearInterval(c)
             io.to(socket.id).emit("chat", "xtexa1")
         }
