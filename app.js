@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 let session = require("express-session")
@@ -40,6 +41,18 @@ app.get("/smarthphone", (req, res)=>{
 app.get("/about", (req, res)=>{
     res.sendFile(__dirname + "/views/about.html")
 })
+app.get("/computer-construction", (req, res)=>{
+    res.sendFile(__dirname + "/views/computer_construction.html")
+})
+app.get("/game-development", (req, res)=>{
+    res.sendFile(__dirname + "/views/game.html")
+})
+app.get("/artificial-intelligence", (req, res)=>{
+    res.sendFile(__dirname + "/views/artificial-intelligence.html")
+})
+app.get("/social-media", (req, res)=>{
+    res.sendFile(__dirname + "/views/social-media.html")
+})
 app.get("/robots.txt", (req, res)=>{
     res.sendFile(__dirname + "/robots.txt")
 })
@@ -54,7 +67,7 @@ io.on('connection', (socket) => {
       
         io.to(socket.id).emit("chat", b)
         b++
-        if(b>20){
+        if(b>4){
             clearInterval(c)
             io.to(socket.id).emit("chat", "xtexa1")
         }
