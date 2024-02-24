@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 let session = require("express-session")
@@ -22,6 +21,9 @@ app.get("/", (req, res)=>{
 
     res.sendFile(__dirname + "/views/index.html")
 })
+app.get("/about", (req, res)=>{
+    res.sendFile(__dirname + "/views/about.html")
+})
 
 app.get("/businesses", (req, res)=>{
     res.sendFile(__dirname + "/views/businesses.html")
@@ -29,18 +31,16 @@ app.get("/businesses", (req, res)=>{
 app.get("/big-data", (req, res)=>{
     res.sendFile(__dirname + "/views/big-data.html")
 })
-app.get("/innovation-tecnhlogy", (req, res)=>{
-    res.sendFile(__dirname + "/views/innovation-tecnhlogy.html")
-})
 app.get("/technlogy", (req, res)=>{
     res.sendFile(__dirname + "/views/technlogy.html")
+})
+app.get("/innovation-tecnhlogy", (req, res)=>{
+    res.sendFile(__dirname + "/views/innovation-tecnhlogy.html")
 })
 app.get("/smarthphone", (req, res)=>{
     res.sendFile(__dirname + "/views/smarthphone.html")
 })
-app.get("/about", (req, res)=>{
-    res.sendFile(__dirname + "/views/about.html")
-})
+
 app.get("/computer-construction", (req, res)=>{
     res.sendFile(__dirname + "/views/computer_construction.html")
 })
@@ -52,6 +52,9 @@ app.get("/artificial-intelligence", (req, res)=>{
 })
 app.get("/social-media", (req, res)=>{
     res.sendFile(__dirname + "/views/social-media.html")
+})
+app.get("/ti-evoluation", (req, res)=>{
+    res.sendFile(__dirname + "/views/ti.html")
 })
 app.get("/robots.txt", (req, res)=>{
     res.sendFile(__dirname + "/robots.txt")
@@ -67,9 +70,9 @@ io.on('connection', (socket) => {
       
         io.to(socket.id).emit("chat", b)
         b++
-        if(b>4){
+        if(b>10){
             clearInterval(c)
-            io.to(socket.id).emit("chat", "xtexa1")
+            io.to(socket.id).emit("chat", "ah544-12")
         }
     }, 1000)
   
