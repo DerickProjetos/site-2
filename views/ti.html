@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content">
+        <h1 class="title">Unlocking Relationship Management Potential: Harnessing Gmail's Features for Effective Communication</h1>
+        <img src="data:image/jpeg;base64,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">
+        <div>
+            <div>
+            <p>
+                Gmail is a free email service provided by Google, offering users a convenient way to send and receive emails online. Here's a brief overview of Gmail's features and how it works:
+            </p>
+            <p>
+                <h3 class="h32">Free Email Service:</h3> 
+                <p>
+                    Gmail provides users with a free email address ([username]@gmail.com) upon sign-up.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">User Interface:</h3> 
+                <p>
+                    Gmail has a user-friendly interface accessible through web browsers on computers and mobile apps for smartphones and tablets. It offers a clean and organized layout for managing emails.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Storage:</h3> 
+                <p>
+                    Gmail offers generous storage space for emails and attachments. As of my last update, users have 15 GB of free storage shared across Gmail, Google Drive, and Google Photos.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Search:</h3> 
+                <p>
+                    Gmail's search functionality allows users to quickly find specific emails using keywords, sender's name, date range, or other criteria.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Filters and Labels:</h3> 
+                <p>
+                    Users can organize their emails using filters and labels. Filters automatically categorize incoming emails based on predefined rules, while labels help users visually categorize and sort emails.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Spam Protection:</h3> 
+                <p>
+                    Gmail has robust spam filtering capabilities that automatically detect and divert suspicious or unwanted emails to the spam folder.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Integration with Google Services:</h3> 
+                <p>
+                    Gmail seamlessly integrates with other Google services such as Google Calendar, Google Drive, Google Meet, and Google Contacts, allowing users to access these services directly from their Gmail account.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Attachments:</h3> 
+                <p>
+                    Users can send and receive email attachments, including documents, images, videos, and more. Gmail also offers Google Drive integration for sharing larger files.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Customization:</h3> 
+                <p>
+                    Users can customize their Gmail experience by adjusting settings such as themes, inbox layout, and email signature.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Security:</h3>
+                <p>
+                    Gmail prioritizes user security and offers features like two-factor authentication (2FA), encryption, and HTTPS encryption for secure email communication.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Mobile Accessibility:</h3>
+                <p>
+                    Gmail is available as a mobile app for both Android and iOS devices, providing users with access to their emails on the go.
+                </p>
+            </p>
+            <p>
+                Overall, Gmail is a widely used and trusted email service known for its reliability, user-friendly interface, and integration with other Google services.
+            </p>
+            </div>
+        </div>
+        <img src="data:image/png;base64,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">
+        <div>
+            <div>
+                    Using Gmail for your job involves several steps to ensure efficient communication and organization. Here's a guide on how to use Gmail effectively for work:
+                    <p>
+                        <h3 class="h32">Set up a Professional Email Address:</h3> 
+                        <p>
+                            If you don't already have one, create a professional email address using Gmail. Choose a username that incorporates your name or your company's name for a professional appearance (e.g., [firstname].[lastname]@gmail.com or [companyname]@gmail.com).
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Customize Your Signature:</h3> 
+                        <p>
+                            Create a professional email signature that includes your name, job title, company name, contact information, and any relevant links (such as your company website or LinkedIn profile). You can customize your email signature in Gmail's settings.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Organize Your Inbox:</h3> 
+                        <p>
+                            Utilize Gmail's labels and filters to keep your inbox organized. Create labels for different projects, clients, or categories, and set up filters to automatically categorize incoming emails and apply labels accordingly. This helps you quickly locate and prioritize important emails.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Use Folders or Categories:</h3> 
+                        <p>
+                            Gmail offers different inbox categories such as Primary, Social, Promotions, Updates, and Forums. Customize these categories or use folders to segregate different types of emails and keep your inbox clutter-free.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Set Up Filters:</h3> 
+                        <p>
+                            Create filters to automatically sort incoming emails based on criteria such as sender, subject, keywords, or recipient. Filters can help you manage incoming emails more efficiently and reduce the time spent manually sorting them.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Enable Priority Inbox:</h3> 
+                        <p>
+                            Gmail's Priority Inbox feature automatically identifies your most important emails and separates them from the rest. You can customize the settings to prioritize certain senders or categories, ensuring you never miss critical emails.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Schedule Emails:</h3> 
+                        <p>
+                            Use Gmail's scheduling feature to compose emails and schedule them to be sent at a later time. This can be useful for sending emails during optimal times or when you want to follow up with someone without interrupting their workday.     
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Collaborate with Google Workspace:</h3> 
+                        <p>
+                            If your organization uses Google Workspace (formerly G Suite), take advantage of collaborative features like Google Drive integration, shared calendars, Google Meet integration for video meetings, and real-time collaboration on documents, spreadsheets, and presentations.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Security Measures:</h3> 
+                        <p>
+                            Ensure the security of your Gmail account by enabling two-factor authentication (2FA), regularly updating your password, and being cautious of phishing attempts and suspicious emails.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Mobile Accessibility:</h3> 
+                        <p>
+                            Install the Gmail app on your smartphone or tablet to access your work emails on the go. The app offers similar features to the web version, allowing you to stay connected and responsive even when you're away from your desk.
+                        </p>
+                    </p>
+                    <p>                    
+                        By following these steps, you can effectively use Gmail for your job, streamlining your email communication, staying organized, and enhancing productivity.
+                    </p>
+            </div>
+        </div>
+        <img src="data:image/png;base64,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">
+        <div>
+                <div>
+                    <h1 class="h32">
+                        It seems like you're asking about using Gmail for relationship management in 2024. While I can't provide specific details about Gmail features in 2024, I can offer some general advice on how Gmail can be used for managing relationships:    
+                    </h1>
+                    <p>
+                        <h3 class="h32">Email Organization:</h3> 
+                        <p>
+                            Use labels, filters, and folders to organize emails related to different relationships. You can create labels for family, friends, colleagues, clients, or specific projects, and set up filters to automatically categorize incoming emails.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Email Templates:</h3> 
+                        <p>
+                            Create email templates for common interactions, such as sending greetings, expressing gratitude, or following up on meetings. Gmail allows you to save and reuse templates, saving time and ensuring consistency in your communication.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Scheduled Emails:</h3> 
+                        <p>
+                            Use Gmail's scheduling feature to send emails at specific times. This can be helpful for sending birthday wishes, anniversary reminders, or important messages when the recipient is most likely to see them.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Contact Management:</h3> 
+                        <p>
+                            Keep your contacts organized and up-to-date in Gmail's contact manager. You can add details such as names, email addresses, phone numbers, and additional notes to help you remember important details about each contact.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Collaboration:</h3> 
+                        <p>
+                            If you're collaborating with others in your relationships, take advantage of Gmail's integration with Google Workspace. You can easily share documents, spreadsheets, and presentations via Google Drive, and collaborate in real-time with others.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Reminders and Tasks:</h3> 
+                        <p>
+                            Use Gmail's integrated task manager or set up reminders in Google Calendar to stay on top of important dates and commitments related to your relationships. This ensures you don't forget birthdays, anniversaries, or other significant events.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Security and Privacy:</h3> 
+                        <p>
+                            Be mindful of security and privacy when communicating via email. Avoid sharing sensitive information in emails and use encryption if necessary. Enable two-factor authentication (2FA) to add an extra layer of security to your Gmail account.
+                        </p>
+                    </p>
+                    <p>
+                        Remember that while Gmail can be a useful tool for managing relationships, effective relationship management also involves personal communication, empathy, and active engagement with others. Use Gmail as a complement to your interpersonal skills to nurture and maintain meaningful relationships.
+                    </p>
+                    </div>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTXXxNR_6WUnz1hVrA0_b8h8diG-is4DKpmw&s">
+        </div>
+        <div>
+            <h1 class="h32">In conclusion:</h1>
+
+                <p>Gmail continues to be a versatile and widely used email service, offering a range of features and functionalities that cater to various needs, including personal communication, professional correspondence, and relationship management.</p>
+                <p>Whether you're using Gmail for personal or professional purposes, it provides tools for effective email organization, communication, collaboration, and security. From labels and filters for inbox organization to email templates and scheduling for efficient communication, Gmail offers a robust platform for managing relationships and staying connected with others.</p> 
+                <p>Additionally, integration with other Google services such as Google Calendar, Google Drive, and Google Workspace enhances productivity and collaboration. However, while Gmail provides powerful tools, effective relationship management ultimately depends on personal communication skills, empathy, and genuine engagement with others. Therefore, while Gmail can facilitate communication and organization, it should be used as a complement to interpersonal skills rather than a substitute.</p>
+          
+        </div>
+        <a href="businesses">NEXT</a>
+    </section>
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>

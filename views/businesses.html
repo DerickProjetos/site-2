@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content"> 
+        <h1 class="title">BUSINESSES WITH SMARTH</h1>
+        <img src="data:image/jpeg;base64,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">
+        <div>
+
+            <p>
+                Businesses are organizations or entities engaged in commercial, industrial, or professional activities with the aim of generating profit. They can vary widely in size, structure, industry, and ownership. Businesses typically produce goods or provide services to meet the needs and demands of consumers, thereby contributing to economic growth and development.
+            </p>
+            <p>
+                Businesses operate within a framework of legal, economic, and social considerations. They often have specific goals and objectives, which may include maximizing profit, increasing market share, providing value to customers, or fulfilling a social mission.
+            </p>
+          
+            <p>
+                There are various types of businesses, including:
+            </p>
+            <div>
+            <p>
+                <h3 class="h32">Sole Proprietorships:</h3> 
+                <p>
+                    Businesses owned and operated by a single individual. The owner is personally responsible for all aspects of the business and its liabilities.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Partnerships:</h3> 
+                <p>
+                    Businesses owned and operated by two or more individuals who share the profits and losses. Partnerships can be general partnerships, limited partnerships, or limited liability partnerships (LLPs), each with different legal structures and levels of liability for the partners.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Corporations:</h3> 
+                <p>
+                    Legal entities that are separate from their owners (shareholders). Corporations have limited liability, meaning that the owners' personal assets are protected from business debts and liabilities. They can issue stocks and are governed by a board of directors.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Limited Liability Companies (LLCs):</h3>
+
+                <p>Hybrid entities that combine elements of partnerships and corporations. LLCs offer limited liability protection to their owners (members) while allowing flexible management structures and pass-through taxation.</p>
+            </p>
+            <p>
+                <h3 class="h32">Cooperatives:</h3> 
+                <p>Businesses owned and operated by their members, who share the profits and have a say in the decision-making process. Cooperatives can take various forms, such as consumer cooperatives, worker cooperatives, or producer cooperatives.</p>
+            </p>
+            <p>
+                Businesses play a central role in driving economic activity, creating employment opportunities, and fostering innovation. They operate in competitive markets where they must adapt to changing consumer preferences, technological advancements, and regulatory environments to remain successful and sustainable over time.
+            </p>
+        </div>
+        </div>
+         <img src="data:image/jpeg;base64,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">
+        <div> 
+                <h1 class="h32">BEST METHOD TO USE BUSINESSES WITH SMART</h1>
+                <div>
+                    <p>
+                        Integrating businesses with smart technology can yield numerous benefits, enhancing efficiency, productivity, and innovation. Here are some of the best methods to utilize smart technology in businesses:
+                    </p>
+                    <p>
+                        <h3 class="h32">Internet of Things (IoT) Integration:</h3>
+                    </p>
+                    <p>    
+                        Utilize IoT devices to collect real-time data from various sources such as machinery, equipment, and environmental sensors.
+                        Implement smart sensors for inventory management, equipment monitoring, and predictive maintenance, enabling proactive decision-making and cost savings.
+                        
+                    </p>
+                    <p>
+                        <h3 class="h32">Data Analytics and Artificial Intelligence (AI):</h3>
+                        <p>
+                        Employ AI algorithms to analyze large datasets and extract valuable insights for business optimization.
+                        Use predictive analytics to forecast demand, identify market trends, and personalize customer experiences.
+                        Implement machine learning models for predictive maintenance, fraud detection, and risk management.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Smart Automation:</h3>
+                        <p>
+                            Streamline business processes by automating repetitive tasks using robotic process automation (RPA) and workflow automation tools.
+                            Implement smart workflow systems to optimize task allocation, approval processes, and resource allocation.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Cloud Computing and Edge Computing:</h3>
+                        <p>
+                            Utilize cloud computing platforms for scalable storage, computing power, and software-as-a-service (SaaS) applications.
+                            Implement edge computing solutions for real-time data processing and low-latency applications, enhancing responsiveness and reliability.
+                    
+                        </p>
+                    </p>
+                    <p>  
+                        <h3 class="h32">Blockchain Technology:</h3>
+                        <p>
+                            Leverage blockchain technology for secure and transparent transactions, supply chain traceability, and smart contracts automation.
+                            Implement blockchain-based solutions for identity management, intellectual property rights, and decentralized finance (DeFi) applications.
+                        </p>
+                    </p>
+                    <p> 
+                        <h3 class="h32">Cybersecurity Solutions:</h3>
+
+                        <p>
+                            Deploy smart cybersecurity solutions powered by AI and machine learning algorithms to detect and mitigate cyber threats in real-time.
+                            Implement biometric authentication, encryption techniques, and access control mechanisms to safeguard sensitive data and assets.
+                        </p>    
+                    </p>
+                    <p> 
+                        <h3 class="h32">Smart Collaboration Tools:</h3>
+
+                        <p>
+                            Utilize smart collaboration platforms for seamless communication, document sharing, and project management among teams.
+                            Implement virtual reality (VR) and augmented reality (AR) technologies for immersive remote collaboration and training purposes.
+                        </p>    
+                    </p>
+                    <p>
+                        <h3 class="h32">Smart Customer Engagement:</h3>
+
+                        <p>
+                            Implement chatbots and virtual assistants to provide personalized customer support and automate routine inquiries.
+                            Utilize data analytics to segment customers, personalize marketing campaigns, and improve customer retention rates.
+                        </p>    
+                    </p>
+                    <p>
+                        <h3 class="h32">Energy Efficiency Solutions:</h3>
+
+                        <p>
+                            Implement smart energy management systems to monitor and optimize energy consumption in facilities and manufacturing processes.
+                            Utilize smart building technologies for automated lighting, heating, ventilation, and air conditioning (HVAC) systems control.
+                        </p>
+                        <p>   
+                            By integrating smart technology into businesses, organizations can unlock new opportunities for innovation, efficiency, and growth while staying competitive in today's rapidly evolving digital landscape. However, it's essential to assess specific business needs, consider scalability and security requirements, and invest in proper training and change management to maximize the benefits of smart technology implementation.
+                        </p>
+                        
+                    </p>
+                </div>    
+        </div>
+        <img src="data:image/jpeg;base64,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">
+        <div>
+            <p>
+                <h1 class="h32">BUSINESSES IN 2024</h1>
+        
+                <p>
+                    Predicting specific trends or developments for businesses in 2024 with certainty is challenging due to the dynamic nature of the business environment and the influence of various factors such as technological advancements, economic conditions, regulatory changes, and societal shifts. However, we can speculate on some potential areas of focus and trends that may shape businesses in 2024:
+                </p>
+            </p>
+            <div>
+                <p>    
+                    <h3 class="h32">Digital Transformation Acceleration:</h3>
+                    <p>
+                        The pace of digital transformation is likely to continue accelerating as businesses increasingly rely on technology to drive innovation, enhance efficiency, and meet evolving customer expectations.
+                        Investments in cloud computing, artificial intelligence, data analytics, and automation are expected to remain high as organizations seek to gain a competitive edge and adapt to changing market dynamics.
+                    </p>        
+                </p>
+                <p>
+                    <h3 class="h32">Remote Work Evolution:</h3>
+                    <p>
+                        Remote work and hybrid work models are expected to become more entrenched as organizations embrace flexibility and adapt to shifting workforce preferences.
+                        Businesses may invest in advanced collaboration tools, virtual workspaces, and cybersecurity solutions to support distributed teams and ensure productivity, connectivity, and data security.
+                    </p>
+                </p>
+                <p>        
+                    <h3 class="h32">Sustainable Practices Integration:</h3>
+
+                    <p>
+                        Sustainability and environmental responsibility are likely to become increasingly important considerations for businesses as stakeholders demand greater corporate accountability.
+                       Organizations may adopt sustainable practices across their operations, supply chains, and product offerings to reduce their carbon footprint, minimize waste, and meet ESG (Environmental, Social, and Governance) criteria.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Data Privacy and Security Focus:</h3>
+                    <p>
+                        With the proliferation of data and increasing regulatory scrutiny, businesses are expected to prioritize data privacy and cybersecurity measures to protect sensitive information and maintain customer trust.
+                        Compliance with regulations such as GDPR (General Data Protection Regulation) and CCPA (California Consumer Privacy Act) will remain crucial, driving investments in data encryption, identity management, and incident response capabilities.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Rise of E-commerce and Omnichannel Experiences:</h3>
+ 
+                    <p>
+                        The shift toward online shopping and digital transactions is expected to continue, prompting businesses to invest in e-commerce platforms, omnichannel strategies, and personalized customer experiences.
+                        Companies may leverage data analytics and AI to better understand consumer behavior, optimize product recommendations, and deliver seamless shopping experiences across online and offline channels.
+                    </p>    
+                </p>
+                <p>
+                    <h3 class="h32">Resilience and Risk Management Emphasis:</h3>
+                    <p>
+                        Businesses will likely prioritize resilience and risk management strategies to navigate uncertainties such as supply chain disruptions, geopolitical tensions, and natural disasters.
+                        Enhanced supply chain visibility, diversification of suppliers, and scenario planning may become integral components of businesses' risk mitigation efforts.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Health and Well-being Prioritization:</h3>
+
+                    <p>
+                        The COVID-19 pandemic has underscored the importance of employee health and well-being, leading businesses to invest in initiatives such as mental health support, flexible work arrangements, and wellness programs.
+                        Companies may adopt a more holistic approach to employee wellness, recognizing its impact on productivity, retention, and organizational culture.
+                        While these trends offer insights into potential developments in the business landscape in 2024, businesses will need to remain agile, adaptable, and responsive to emerging opportunities and challenges to thrive in an ever-changing environment. Flexibility and innovation will continue to be key drivers of success as businesses navigate the complexities of the global marketplace.
+                    </p>        
+                </p>
+            </div>     
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSBCzCfUoQhUDIMSzrwSa1XkVWkVTKtZB4Zw&s">
+        <div>
+                <h1 class="h32">IN CONCLUSION:</h1>
+               <div>
+
+                        <p>
+                            1 - businesses in 2024 are expected to navigate a 
+                            rapidly evolving landscape characterized by 
+                            technological advancements, shifting consumer preferences, regulatory changes, and global uncertainties. While specific predictions may vary, several overarching themes emerge as businesses strive to remain competitive and resilient in the face of these challenges.
+                        </p>  
+                       <p>
+                            2 - Digital transformation will continue to be a driving force, with organizations embracing technology to innovate, streamline operations, and enhance customer experiences. Remote work and flexible work arrangements are likely to become the norm, prompting businesses to invest in collaboration tools, cybersecurity measures, and employee well-being initiatives.
+                    
+                            Sustainability and corporate responsibility will gain prominence as stakeholders increasingly demand ethical and environmentally friendly practices. Businesses will integrate sustainable principles into their operations, supply chains, and product offerings to meet ESG criteria and address growing concerns about climate change and social impact
+                       </p>
+                       <p>
+                            3 - Data privacy and security will remain paramount, driving investments in robust cybersecurity measures and compliance with regulations governing the collection, storage, and use of personal data. E-commerce and omnichannel experiences will continue to shape consumer behavior, prompting businesses to prioritize digital transformation and personalized customer engagement strategies.
+
+                            Resilience and risk management will be critical as businesses confront supply chain disruptions, geopolitical tensions, and other uncertainties. Companies will focus on enhancing supply chain visibility, diversifying suppliers, and implementing contingency plans to mitigate potential disruptions.
+                       </p>
+                        <p>
+                            4 - Furthermore, businesses will prioritize employee health and well-being, recognizing the importance of fostering a supportive work environment and addressing mental health issues. Investments in wellness programs, flexible work arrangements, and inclusive policies will be key priorities for organizations seeking to attract and retain talent.
+                        </p>
+                        <p>
+                             5 - Overall, businesses in 2024 will need to remain agile, adaptable, and responsive to emerging trends and disruptions. By embracing innovation, sustainability, and a focus on stakeholders' needs, businesses can position themselves for success in an increasingly complex and dynamic global marketplace.
+                        </p>
+                
+               
+            </div> 
+        </div>
+        <a href="big-data">NEXT</a>
+    </section>
+
+
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>

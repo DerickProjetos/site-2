@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        *{
+
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+       .content{
+            height: 70ch;
+            margin-top: 6%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            gap: 20px;
+       }
+       
+    </style>
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content"> 
+            
+    <h1>Contact Us !</h1>
+    <h2 style="text-align: center;">Welcome to <span id="W_Name"> Mondongo</span>!</h2>
+
+    <p style="font-size: 17px;">Please email us if you have any queries about the site, advertising, or anything else.</p>
+
+    <div style="text-align: center;">
+
+      <img alt="contact-us" height="87" src="https://lh3.googleusercontent.com/-BA7qy8h_v1g/YLVCWDNZdCI/AAAAAAAAALw/rsHNJWX0BK4P5CuB0ymG8QkJ9A9E8KchgCLcBGAsYHQ/w320-h87/email-us-1805514__480.webp" width="320">
+
+      <p style="margin-left: 25%;"><i class="fas fa-envelope-open-text" style="color: #2c3e50; font-size: 20px;"></i> <b><i> <span id="W_Email"><a href="mailto:oliveiraderick711@gmail.com">oliveiraderick711@gmail.com</a></span></i></b><br>
+
+        <i class="fab fa-whatsapp-square" style="color: #3edc81; font-size: 20px;"></i> <b><span id="W_whatsapp"><a href="tel:"></a></span></b><br></p>    
+
+      <h3 style="color: #3e005d;">We will revert you as soon as possible...!</h3>
+      <p style="color: #3e005d; text-align: center;">Thank you for contacting us! <br><b>Have a great day</b></p>
+      <span style="font-size: 1px; opacity: 0;">This page is generated with the help of <a href="https://www.blogearns.com/2021/06/free-contact-us-page-generator.html" style="color: inherit;">Contact Us Page Generator</a></span>
+    </div>
+  
+        
+    </section>
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>

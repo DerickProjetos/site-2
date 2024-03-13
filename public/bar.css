@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:  system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   
+}
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff8fc;
+    gap: 25px;
+
+}
+.bar *{
+    padding: 2%;
+   
+}
+.bar div {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+.bar div *{
+    color: black;
+    text-decoration: none;
+}
+.bar .index{
+    font-size:small;
+    color:black;
+    width: 80%;
+    text-decoration: none;
+    
+    
+}

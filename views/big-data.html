@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content"> 
+        
+        <h1 class="title">BIG DATA EXPLAINED</h1>
+           <img src="data:image/jpeg;base64,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">
+            <div>
+                <div>
+                <p>
+                    Big data refers to extremely large and complex datasets that cannot be easily managed, processed, or analyzed using traditional data processing tools or methods. These datasets typically have three main characteristics, often referred to as the three Vs:
+                </p>
+                <p> 
+                    <h3 class="h32">Volume:</h3>
+                    <p>
+                        Big data involves massive amounts of data, often ranging from terabytes to petabytes or even exabytes in size. This volume can come from various sources such as social media, sensors, transaction records, videos, images, and more.
+                    </p>    
+                </p>
+                <p>
+                    <h3 class="h32">Velocity:</h3> 
+                    <p>
+                        Big data is generated at high speed and often in real-time or near-real-time. This continuous stream of data requires efficient processing and analysis to extract valuable insights in a timely manner. Examples of high-velocity data sources include social media feeds, sensor data from IoT devices, financial transactions, and web logs.
+                    </p>    
+                </p>
+                <p>
+                    <h3 class="h32">Variety:</h3>
+                    <p>
+                        Big data comes in various formats and types, including structured data (e.g., databases), semi-structured data (e.g., XML, JSON), and unstructured data (e.g., text documents, images, videos). Analyzing these diverse data types requires advanced techniques and tools that can handle the complexity and heterogeneity of the data.
+                    </p>
+                </p>    
+                <p>
+                    In addition to the three Vs, some experts also add two more characteristics to define big data:
+                </p>
+                <p>
+                    <h3 class="h32">Veracity:</h3> 
+                    <p>
+                        Refers to the quality and reliability of the data. Big data often includes noisy, incomplete, or inconsistent data, which can affect the accuracy and reliability of analysis results. Data cleansing and quality assurance techniques are crucial for ensuring the veracity of big data.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Value:</h3> 
+                    <p>
+                        The ultimate goal of big data analytics is to extract actionable insights and value from the data. This can include discovering patterns, trends, correlations, and other valuable information that can inform decision-making, optimize processes, improve products and services, enhance customer experiences, and drive innovation.
+                    </p>
+                </p>
+                <p>
+                    Overall, big data technologies and analytics play a significant role in various fields such as business, healthcare, finance, marketing, science, and government, helping organizations gain valuable insights and competitive advantages from their data assets.
+                </p>
+                </div>
+            </div>
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExMWFRUWGBcXFxgVGBUWFhgVFRYXGBYVFhYYHSghGRolHRYVIjEhJSkrLi4uFyAzODMsNyguLysBCgoKDg0OGhAQGi0lHR8tLS0rLS0tLS0tLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tK//AABEIAKgBLAMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAEBQADAQIGB//EAD8QAAIBAgQEBAQEBAQGAgMAAAECEQADBBIhMQVBUWETInGBBjKRobHB0fAUI0LhB1Ji8RVygpKisiQzFkNT/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIxEAAgIDAQACAgMBAAAAAAAAAAECEQMSITETQVFhIjJxBP/aAAwDAQACEQMRAD8A40oSZJJJ3J3J6mp4dG+FWfBr3dTyfkAfDrZUozwayLNPUXyAeSshKNFmsizRqL5AQW6z4dGCzW/hU9RfIAeHW2SjDZrItU6F8gF4dYNuj/CrS5a0pUG4D4dYe3Ra2q3ezpS1K3AEt1nwjTCxhSdv7DuauFsD5fdufovT8fTaqoj5AW1ZtJbfxFZrpy+HB8iwTn8Qc55AHca0K6k8/wAvb0o82vypjwHgFzFOyWygKrm8xI5wAIB51LSim2UpuTpCOxgWY6An01q9uEuBsdf3+/Sug4TdSxLMAWGgHL7VZc47JIyjXTQVDbviBM5A4WN9O25rbwumnfcn09DXSJ/Cmxczo/8AEZhlZScpUxowmBoD9RSzwJIAUljsBqddNAB6aULpewsKEDv9/f8ASqxa1roMZwW7aQXLiZFY5RJXNMTqubMNOo6daXi36fSmkn4Dk16L8OhFwR1rNpJ3HuP0o+zaOca6T3FS1h5B1BgTqQNJA56k67DvTcRqZTjOD37S23dCq3VzoZHmXTXQ6brv1FD+G3Uehg/vnT+9wvFFVOS4yqoyxLqEYSAuUmPTSOlK7lr+lvKeY223kVCVlOR3R45w/wD4Z4Plzm1k8IL5vFy6tMEfNrmn9K86w/DrTLcPj5GRZRWRibjTGUMNF01mKPwfCLt5glpDcaJhY26mduW/Whb2HIJBBVlPmB0II5evWs44lG0maPI3VoDxOLvuiWnuu9u3oiliQnop+kdKX3LUfMCPT9Of2pvds5vf79vWhTbI01H29qvQW4Bkn/V6fMPbmP3NVPaI1mR1H4HoaLZuwPt+lbqeq/v8/ep1LUhaVrQqa6IcMsNhrt7x8t1HRVsFZLBolg86DU8v6D1FJjbqaK2AmU1pBoxkqopScRqR35sVBYo9QMsmqhcBrtPF3YN/D1BYpiLVTwqYvkAPBqeDR/h1PDoDcAFqtls0aLVbeFQLcCNmtGtUw8OqnWmNTA/CrDWqMCVnw6KHuBJYp58LYTCtcYYmMuXy5iVWeckEaxt79qES1Q3EnNu2zD0/WoyRuLV0XjyfyXLCuI4e2LrrZM2g3kjWdOu7ayAelCPa5fuaV8K4g7an2/X9/lT5RIpx8M8txl0B8H8vzoiypTYkE8wSNOkj70Vbs/s+9Ya39KHTEpgTJ2n96VnAYFrlxbaCXYwJ0A0k69IBM9vqfZwjOwRBJb2gdzyHeuh4fh7WGghl8Q6ZyJO8EIu+Uc+sbjasck6XPTqxK/fBS/w2LH/3tJ5JakyORLEabHkTpUuOlpSVCoTACLq7KTqWuNJC/Y044piFa8r3HWMogFggKnUa7vMzoI19aU8Sw9geY5iSSWJYq5J3XLly5vpHMVlBuVbGk6jeol4hi3u5Q5UKs5VXYTue50G/Sggg/etNLeGVJNxJJ+VWYrprq0a9NBB3mNJvu4pVslfCtgv8pyAOEIyzOpjprMjfkei64kY231sRIgBB13FagCdqvC60Tw4gPBQNm0EoHg8mAIMxzgbe1W+dEnYXwZ2a2ykMypGQLOdS0zBAJy7SO9EDjLr5HC3FmMt2GkbETE/XaOoNB46+0G2UUZSTGULDEgGIgGYHLkK1wGFN24FLEbxrEe0fafpWEop9Z0RnXAvgvj2rxbCvbOYFMtzTXfKQd9QIIPrG1JeKYa4t1/GBW6SWbNoSW1J6R3GlNMXh8jZRrHUz0j8Rr3Ps1t3lxFtUuDOVWI2uAA6PbbmdRK7HQVPj2KTUlRxVyxp+99KFu2c2+h/H1p/xDh72InzI05W/pZdPoRzHI0HxzBWRbtPbul2uKWdMpXK2kLmPLU/SdjWjaBXZz96yDqOX3jnV1pNKxkPPRvp6CrsLa3P26H9KI+lS8BUGjTtpP1if/KhXt8qYLb+YdvwINDYhTofb3H9ooaGmBOlVZKLIrQrUtF2eiooyCelVqLZMAVzuC43cYhWGlPMDYJYGqk0+nmPG4cYz8CKwbdGWXXKSxEiufxfHMpiKcZGaxt+DLw6nh0PZ4gpTMaExHGwNhVkrHJukhn4dZFuueHHzRmG4uTuKLLeCaHmHsKfmMUJirYDGNRROFcOJqm6mtJemS/AMEq1LdbKtX2kmqboZotugOOWJtx9f3710F7CZQDFKeJ25AU+/v/vUKVlxTixH8P4DMTT9bUaUfwOxh7Q+YEner8batxKnes1k7RWeLb2sWZdP3+/9qI4cIuIcuYBh5euu3rVt+4GJORVBj5Z0yiNNedNeD2BbQ33ETovZdi3qdh79aJzqPRYoXNU/BrxC8DJVdQNWMCY2Gb/LPT0rn7qW1VrjksxAWTIXUwIA1ywD00Gx2oviFzOYUmIg8oykyPsdKQcSxhc5ZPhpIQdIEA+u0n1rHFidUdmbMrtltjF6ZLYLQPK05cs7szRm6dBsANBVXhkEQCX2BMAARMqOQ7yY/CsYq2qAAEsdSJgSCYzaa6RoO9Yv8RW7C3MyqREKYAYxDEHTKK31rxHOpX6yq+yrJYqTyXysSdpYgaD3k0DdYtJOpOv5VbjrVofLvJ0BlQOQnWfY9aAONCkJuxIAA5kkAAe9aqkrBxbdIOsYFnEiB0kxP6DlJ0rW3g7mfKqkNO5BAHmjMSBtPOr0vo4AQgwQgMTmJJPLYeVmnvWovEqVmBMkHl2iP3FJSb8KcNfS/iRk5cgAGxgydevL0ArTheJFts07HbXaDJ1pdexMaAbncHU/pQj3TB1PLTfnMfapa5Rou9GOP4jmckDTcSoOnU9t59a1s46DMlSD7ztJ1799291QMz9Rp9vTb6VbtpzO3/V2OmlFcNEkdna4j46izeWUYiNPMjHQMJ55iexkiua4tw82nNu5rzzDZhycdj+tZ4bcKt3B0jaZJkDfWPt3p/x3Di/aJUHMo8RO4OtxPzHp3rP+r/TL9/04i4vLcdD+RozhmGLnKoljAAO7ToADsTQ2bT97/wB6I4WSHkSCNZ2MjXTnVoUnwqxGFa3dZHBVhKkHcHSQaWYrcj3HqP7TXVYPiluzcum9YF83FhS5EqTJLag7zvvpvXIXZB7j8udK34yopeoGO9bZa1uiDptuPQ1oGNCZQxw14kg9K6G1xLKhPQUlwqALVltiVI5Uvo55pNi6/wAWuOx1NaqzE6mqgiyautrI0qU2dNJLg3w+IBTL0rGZelJRnB3phh7mlaKdmUsaXhARO1ObBBXQUldauw+MKqRSUqJlG0dLg75UaVovF0Z8s60LgzNskmkGFH/yPervpisMZJ/o7G1jUkqaY8OcZhO1cbj7uVt4p5wXEZwADQ1xmMseqUkeg8UtocPnUjSB7kgR61wXGHAUmmFuw2pnYz9qTcYYhSKyww1T6VkmpzTqhLgrzMSRmygwWAOUepiAa6rh9yQIpRwrjl23hLuECp4dwmWIOZQ/zbGDsInUfSj+DkBY6fuatW7tFf8ARGKSaGZIkTMTy3jme5roOI3fFOW2cuQspAE5Ao0MHQtCgDpB23rmoLMFHMgD60fh8SxNxg2VSCojc85PeJM96icLp/gyxSpNP7N+KYsgZAdYg+pMkk/T1InpSJ1oi+8n3qlzW0IqKM5zcnYI9uq7o019q3uYtAYkUNxYvACDMTtH70puSQ4Rk2ZuEZa5vDWbrs5tIXuefYDy27aZnKydGKn6Agb0RxLGXLdiDv5cxEEhmc851AVCBGnmPXUDhN13zpporPOWS5IHkHQMEg89COZnjz5lJUj1sGFw6w/hfE3CwWGVmZNWWMzBWty2mhCXFBOikmYBppwvGg5pSIJGs6GdvXSlWM4YM9qxMr4hzwZPmKKMxGmYKGEcteurYcGuQ99UY2wf5h5BtCee0kde+9GGTXGPNBSXDZbGe4qrALEKC5yqCx0JbkNTVV2yVlejFQQZWRIMHmp1170G17XWZ5zyI2k8v70ww2WBmKnsTuSefXlXQ3051HgPEHnp1Oo5aTv+9q08QajQafv8DTGFA8wVZnXb3rnsfci4AjGP8xmATyBGkbVEp0aRhZ0vDMXaRszSZGmxB8oBBB56/SmPB+InOACOTLHdZIB66T31578pwfENbvea3bfLOa3dUm2dCFaBuZ1nt3or4dbxIk5efcQQmk93B/6ay3T4a6V0N47gBavsBoreZY5BtwD2YMNOQrPDEGvXbuacccK3LYeNUb/xuLPLoQP+6lHDzLCOv+23vW2N2jDLywPiia/X8x+lJr8EkdzH12p3xgid/wCrX3/2rm8U2vsPwFOTKxrhpc29PwP9/wAaqzVnNO/ofTr7aH2qqDUWa0dQMGNgatdAqGtMEY3NWYvEqVIq74cTu6ES4aaMweEis2bJ5U84ZgSeVSqXTXJPlCO9hgKstYURNNMdg4JkVXaw+lMz34KXsGsHDkimD4bXesX8PlWZoNFMIwgy2SKR4Rv500xsYhnUqBtSLVXmk5DhF/yTLuK5ix1q7hGMe3tQ9uXaN6uZyhykUX2zRpa6nR4PjFzU+n/sf0qjG3y47/lWMCkoBzKz9SD+VYGGjWf71cWczUb/AMK7GFchhGkD8R+tF4S/4YAPr+UfY/WspiDBAJAjp/qXvQN2xmb5j9P70WNpSXR1Y4uP5lyQvhoWnfUkKo+rfaisLinQXQylSqrIIggvBXTupn0NIv8Ag6sygu0EjMIjSfXenVvCgpCZVAnkQOmsDoB9Khz6HwwrgAeJnWBSLE8XcE0yu2iubYnSInY8xpSXG2e9W5c4VDFFfQJexLNrNHcG4mBmzlyTlUBQDImSsk6EkLrr+NDpgWKFo8oIUmRoWBIEb/0n6VZwnCjxVlioBmVOojUERtrGtR6b0l9BfFMKxS4Cra88pOa4XEBB/qggDkPelWHy2W8NBmcx4pOqzqMij/KMzAtrJ20iX/FrRtv5dSJBLMzHX5iSSAJ12A0EdSV44cf5d4XLRzMw8NSDcXLuzjoSTBn+2EodNIy5Y2W4SWZdC3zZQAWJJkzMwZ2ECjrXEL1vDth0fLbYmRA2MSJ3G2tWWVGQSo9t/wB60G9lgxBI5857xIkfetUl9nM5yE+JsnWY9dQd9hp+4pjw/hhYM4RnCAToSByBY9NKa/DONSziBcuLmABEQNCf6gD9PejeLY7xLlxrQKK8DKDAIA3YAx396JT/AJUi1/W2csMIzDcyJMEnYayNKVNbAcEgqkiYHPtpv/eukRGnlPL+5586U8ZUK8ZoB3gaARIP4/s0pu0VB9L1uS2msEAkTDR5oHOASK2wF0pdadViYAGgMhRoO6tvVGCRmXNaMwIdYnzDbKOui0x4ThWUswaXbSZbaVDqxA1EhTGg5c65ro39OiZbbYa9JhvCzBdNAALmp6gKPt1pLwAq95bZYKDALNsOcn3p1wXh7Xr1wEgs6XA3QDJkMdvMg/6aR4LBC1iGtsTnViCIESO81rCdWjHIrV0L/idcl8qHWM0Z9csBgC0dIk0f/iJ8OYbB2rVy1eLM5y5WKtmXKT4i5RoBAHTUUF8U2Vzgknpt1EDn+4rkMesEHXWd+5J/OpnKW12XirWqKxf13+1dLfs8NAtn+IxGc20NwC0pC3SPOomNPdvXpzVscwNtu55D99KzdYyfWPYaCi5P7K4jt8HhCySKT41WBrfC8YuCYNA4ziLMda13OaMJJjPh7bTXd8FdAB1rzLDcQIinFniDk+U0p/yQnBqV0dZ8QWgNRXPYcEntQ2O4jciGNVcO4lE04OokSx22xhdwbnVaCvWbhOWjn4v5fKYoEY1id9aakxRTRtZt3Lewoe9wy4xzFd62fE3JnNVh4vcAAJBoZatFSYK5b8wWrkwj3DLCpd4wxXcVbhOING9FidnVf8Gthv5LF7eUQzDKZy6iPalHELJUxE0bwnHPl1YCJHXf/es23su2t4g9Mo/GazU2nTD476gThnggXVuW2Z2WLZBgK0Eknry67d5qcOwJY/KT31inljBEE+G9vVWU6mSGGo8wgcvpQ4sYgNEj2ZT76Gs3lfaOmOC6D7Hw8+U3MohQTuJ2IEjprVFjBhbZB50xxvHlwlkWmYNeuwoWflRjDM3TSY7npXGLj7ly6toMJZggkwAS2WT71MZTkrZWTHGLpD3CYB0GZWhlkqeYmQ32JpHiuCMTpTfjlq7g3RGuB8yk6ArsYMgzArnMZxoo0Zp5+24q4zl6jKUEuM3/APxpiQNJOg9zReA+GCraMjDsfyOpoTBcfLsTm+VTHdiQgE8ozT/096rscbIIMzOhnf8AfbtTc5D1R0fFfhwsNNTABHWBE+8faklr4dZSCBC6jzc/Qb6aCRsT3ojiHxBl8oIL7MdAo2JXfUzz02O+9JT8Wt4m+aNJbWeWs8okelTGcytV9HZvwkELkacqgtoQVnl3HfvQ9vgoAkkTqO3060Dw/j4vAlWhl76qJnXqsk6iI58hV1niZYOMyaSZBUrnVuRHVcradfap3mHxxD8PwhJJLDURMenajrWAt5d5gcveubv8ZCM25UMUK7GQdCDyGh36VtY4jdKh4ITXKYIVgDqJ5kSaTlL8jUF+Bpd4eg15fuKAx3ALdx8zMNREQNon86Gu8WcKSw00ED5p9PrQv/F3mdO/Ty8h7RRuxaV4NrfDrVqCNDp7aDXShEsW7jAMT9yBIkf+ub2qi3jC7KLnlXOAxGpAzJmgfet2w/8AOPhMWtZ9LjjJ5UHnLaeWFPT9KanzotGdRwhUQ3HUkFLbknaPKdfqaUYTwzdztqep3JPOTuaWrx1gmIUHQhUQRrkBl3JjnlGnVu1KcLxhmMZdZAEdd6E/RuPg4+I2ttcAA0/etKOM4C2wARdf7CqMfjXW4FYQT7wOpo/4g+Ib10rfZEUhQqhBAgEwT33+gFV8iFpIo4dw21bgXBqNfca/lSfGPbDkBdKJw/Ebl2TlnkPr+gNLsVfbMZWnHIg0YPbvaUNdaojVXceps1SLrDUyw+KikgerFumnYnGxpjMYTzqi1eNAtcrK3DTUqDQMbEtUXEN1oBr0Vnx4j9/hS+RIfxjNb7HSTVeIRxqZA7zVWHuA6zr2FFXOIEDKSftUyyv6NI4V9ghuiNzNXYe+etBXr6E7VfhL60lkY/jR0/BMYTpOmn02P4/agg7h+eh19v70w+GWtM4UqZOg1EEnSCY0+9UfFXF7ltvBWwuHKMc0gXLhjaXYQFIIPlGumpFNZHYnihHthuDxdyQCx6T66a0uxOPugzmPSZ+h0/elafDWLxeJxFuzayu7GfMlsAKurMTl0AAob4iv4nD32w+I8POkAgLbynMAysMqgmQQZP22ociYxQ4tfFd42hbcKyqxJzqrAnSNW0kRXR8fwOHucMfGpbW3cD2yGXy5i9wLcQqNP6mMxyHKa8zXjbDzeFabLvnD6ewfSmFz4lv4tRYuFQiibVu2oVBcAPIkliwLCWJ1iNzWTk74bvWv2bjH3HKl3ZjGXUljoD15bVRimFzSYYDfl70PduyxIUKC05VLQA3/ADkmNjqazh8JcuSUHlBALMQEDHZe7a7CT2rT5OGGnTTALfR/5ev+Yxmt5N2L9EgGTppMU1S2ouFktj5pWb9s2wesMFYgEbN9euEKoqrbvqVjzITlzlpVnI3JgwAdoA51SoM+GV12KzBPcbeU6AmNqz2K1NHwAMk4m33M3CS3OfJ1/Gg24OxMC7bIMRHinNJic2SIB0q9+GPlDjRc5QFpgMArFSQYOhU+jCqbKmz/ADC4IEg5GBy6AB1U/wBQkESNx3olMcYUEcFx1m3bLoX8bLEMfLmJHmUKuoiT5mmQNDvVnAsb4ZZWJyHQxqZEgET6kehPaE9jhpg+E6XCP6Vz+IR2RlHQzqfepghme5JKhRmbSWALqsBdJMuukjnVxmRKA9xPEx4txh5lZiYaRzaG8pGoDHtqaa4P4nuGytgBRbtZsinzEEknNJ3IkxpA6VzqC1avJcZkuKpBNq8txc4j5T4ebf1E/arsBatyxzFpJhbcoqiTu1xZI6aHqTRsmxOLSGfFMQ3ghsxZnUyxJmA7DU9YXftzOwOCxcLpyYwDz336bHb9auxsi3lXzZBBUhIhnZgzTuskqY5rykSmR2CtIaJ87ZAIPJQ2wn9elDl0FHh1WGxJ8MR4erMpzSC4gAAPqRBzHloV3rFnGeRkuB1IFxzbDFQiBQRnEyzEqSJ00XlSC1iGmVIzDQE/07RoR8o8o2iJMGs8TxsIFA1ugbk5hZXLBJJ3ZkG+sIwO9TuVoW4XGGWnQkc/UVTgsZ/NU9G+wj35mltu9lVtdSIjlE8556faqrF05l5DfqsydxvGk89BTcxLGdD8U4mXHMmNunSeVHfEnxM9/B4e0wQCyAilQQTCxJM9ANo61yfFMUT5uug56cz++pqq5iZsx0I+9K6CnQ34FjSsa7k/bb8TQXEMafEbXnS61iMpXso+/m/P7VRfvSxNCnwNOjXKelVOD0ogXKpuNU7MtRRi1ZY7D7ipctsu4qzC4jLUxeJBp7MeqBS5qK5FaTUmix0ZZqxNSsFqQwvD4mNDRjujrlPseYpNmrK3KB2F3MC41jMOq6/Ubiq1FW4XiJXTlT+xw9cRZLJ/9oEj/VH9PuPuKF+iqVAnwrxJLGJtXLil7asC6iPMPfQ8jB3iK9I+JkwvGEjD/wAu+g/lM8LniSbNyNADJgzoexNeQ/amfw/xZ7N1SDqCCPUcj6/jFD9JSTArGJv4W9KO9m9aYqd1dGEqwI17iNjVeNxL4h2uXGL3m1ZiQS+m57gAD0A6V6N8ecGTiFj+Owom/bRTiEG9y1GjiN3QDXqv/KBXkheDINDdka0wsvBB1nny1G+nLkferEbWVMMNQe+4I6GYqtXzCBueU/1CYHuJj6ctd3xhNpLeVJRnhlQB/OQxDtu4EadJNRZdD4MbwNxF8x0dQNj830MaekctX3GuFQqC0rBbeYKDMOrElbjEf1OMswNMsaCK43gzOLqItzIzsqm5PlUFgJbqo3M9K7D4z4X4V1ktXRdUBQcjFocoNCsscxiTtMggyGFFioScQxVtb7+SXnzKzArMeYxEQZ+WlmL4pdbQseirGWE7EQRoY1PI6Vpdw5203JIOg13KkEkjfQ7fWqXtkDXbXKSSq9SPMPty6UAHNxFvATC+EgC3DdzFB4uZhlylwZKR/TG/oBS27hjGkQNflgknsR6VLhOhJiQTLAFee0b9dvpWIOXYgTMg6co8oM9eftUlG9txoWIJ2hZ3B0Jgfv8AEv8Aj2AKMxZCTJ82moMA6aaTl20nvQiHXnpAlRl5iZjX6996jIRsDOvy66kD1jQ6mTvTCizOYBE6/KdFEjqesx9aIsXmkxmkARGukRq+giJ5xvQiWySIWCOTamefl0259lNECBoFjoWIA05xGoGmw5immDiNvFNxQc5W4Jy3DOUCdEZiNUktrqNTOhNUPde6VWAt5HdXtgw+Zdis7jRxEkyG6iqLVstEaDmMon2k5p21I02GulNhw61cKtLG6sSbRCnU+U5spVmXKNRJ8/PKKGxJE4Zws55ZcoTUqxCwQS0MROQR8zGSoadZXMr4z8QXsatgXRbC2LZRBbTJCaaHU8goHL6k00+JONEILFti1z/91yFBn/8AmoWF65tOZBnWOWeSIGjbso0B03XptJX9NARkSZ1G49gA3PaPWm3xOcF4qjAi6trIAwvGWFwE+IRqdIC84lWjSKT22B2POSeuUc+2tVXrnTnH/by9zv8A70AyYm5mPbl6Vi0CVdeuX/3A/OtDT/4R+HL2MN7wig8O0bh8RsoOUggLoZMrzgDmapkxOdutLE99PTl9oqpjW0VowpDTGguVpcu1pNaNVWCRDcrGetStampsqizNW+ahwasBppjoyz1LSlmAHOiMNhAT5yFHff6V1HCntW4yLtuxgsf09qhtlxjYzw/wFhzYV2uXRdMSoKZJPKMs+utdNwn/AA/4clp3vq1wZSTncgCBIy5II260DgOIZhrsNqV/GHxKxXwUaFVfNHN20I9ln/voZooxEXFPhBVt+LYulvKG8NgC/cBxvp2pTwLibWnBnSrzx5hpNKLrz5uZ1pRbXpWWMG7gd7iPhlcW5u2LqIzAEo4bKX5nOs5Z00g8zXMcd4LiMG4XEWymbVGkFGA5o40PpuJEgV1X+FGLVrjpcaFK7nlrH11j1Ndv/iMLb8Gv+KBmtG2UmJW74irp6qzD0Jq3Ix1SVo5L/CrjBt4lZPzeXsATr9NT6MK5b/Ez4YOCxbFF/wDjXi1zDsvy5CZNsdCkxHSDzpV8PcTa1dQgwZEE7SNp7cq774h+IcK3CWw10i9cLg4dQwz2QN3c/wBMKWWD80+sD4S+qzym1dKmR+xXZfFfwi+DSwWu23OITxP5fL5fKWOhBziG55T78e6Bdteh5ewq3CXcpMcwZ784P0qRBAaNBEcxI370bg8U6EOoBGWGQ6q9snVHA3U7zuJkQQCBvLc20P4jv+o9I51ptHr+WuvsfrQI6jB4A4okYRXLwWNrNDIqjzNuA0aAMJLaBgDuruYdwTKnSZMFZnScyjbXmogyOlL7F8o2a2zISIBUlTkPUjrrPKmNrjV0HzhbwPli6Cza7/zFIfad2I1FOmBDhQQTb0bSR8jhY+YqQQwkkSPWhP4UgHSI5kR7ZknQ8jHrTF+MWm+e0wHPLeJ98ro2uvM8q3tXMMYyXQpOyul4Mrdf5SupJ9T6DYKgsW2cIxIkEkkbn85AI9Y2plY4Jb0LlgSAdFMAwDIhiNJ3kjXan+B+E8R44V0JCkPAAOYDXRRAM99YppiuEXYGZMmWdSFXNLEy7MNxMTmMACNqKCzm8Vhh/CjD27Fkm3dLNfOdLrKR8jyFlZI0za5RoN6CwGAZbnmsswXoIBkeUygIgAzOaBA3NdTgOI4fCXEuG/YJttIRCbsnnmFueZ3J0MGZoPjPx+jsxtWiczEk3ICgnUZbakmJ6sO4o1Y9kELgITMcKEWJa5cNoWV7uwA5cvxM0h4z8TDbDsZOjXggRiIiLI3Qb+YjMe3NRxPiVzEEeLeZo1QHRU/5UEKvqBRPw98PXcZe8CwFLFCxJMKuWMxJ9WH/AHU9SdhRZToRp2IHb2/vWLokGCOpO2s7if3+Tji3BrmGuNYvAWyhhyTIYkA+WPmBBFLnxdtPkGsfO2/so0XXuTTomxlxL4Wv2MDYxjshTENACE5wMpMMIgE5NYOnPeuaUSZJ1PJdfbpV90kiGOkkmdsx3hevXvvWtoiNNBzPP0/sPekkUzdABuAI35x6naew19KrxF8t6DYfme9Ze4DoNANh+Z6mtJFXQiusEVbmFTMKKEXok1abYG/96pzn09KwKEiixmHIVq2usVipVUhGAg6VYBWtZBo4BqLfSaJs4hl2NU1KKQWw5uK3YgNlH+nT70EzE7maxUo4FswVHSseEOlbVKTSYWE8JxRsuTPlYFT21BB9iAfamvx98T/xngqpfLbtqHkwty6JHiBORCnLJ1I5DmhNC4mp1orZvgNNGXby3SS38tjGoBKExBJGpBO5InU7Cgq2AqWgLmtFdG+U7Eaieqkb+lVhMrCe3uK3tXWXbY7g6g+oNXLkYR8h5TJUHsdwO2tFBYKhIOm4pzwfDriPEBvWrDLbZ5vNlS5kj+WumtwzoOevTWvjnA8RhbgTE2jaZlDgMQZViYIyk8wRHKNaX6evr+lNRCw9cOSPlM8tZXuJBPrv1qWrgDAXASsGQpCmSDBDEEaHLyM6iRM0Gl5hsf0+lE/xZ5iQdY5d9Dp9ANqqiTRhHIevUfs1EkmP9q6X4K+GTxG69m3ct28iZyXDSQGAAAU7S2/LvNIzhhm0bQaHKQ+vWREjvQBVgr7LcAVmVZOgYgbHkDVCnNJbzHqdT9TRFqxDTqdemX7mqraR/SfeT+EUUI2bYfvp+/asTy3/AHp+VWWgWAygbmNJ5DUTJrdr6rzLHoDp9Rp9J9RToAjhnCbl+5btIMrXGVVznKJYwJbkP00k6UdhuK3uG4pzZYLets1pzo6Sphl/1LK9tu1IblxmGsBfoJ56cz9TVQIG2vrt7D9aVAH8X4pfxV57958zudW0UaCAoA2AA2FF/CnHRgsQuJNpb+UMMrwASwIlTBhhrqRtIjWaTNJbqZissoP/ACjTuTzj96CKGhomOui7duXcotqzs2VflUMSwtoOgBgdAKoZp7AbDp/fvW1wz6DYDYVqBSUR2Yy1IraKkVVCNIrFbxWIooAmpUqUDM1mpUoAlZqVKQjIrNSpTAlSpUoESpUqUwMUNialSh+DQMK2FSpWZRJqTWalUIY4rjuIutmu3numFWbjM/lUQBqf2TNVC4rdFPRh5fZhBHv9alSgCq4IMMhB7HT1EzP1rK5TpJ7SP0mpUpgYWf6WHPZoMEQRrB2rU5hrBHsalSiwo3QTquh+g+v5fTpW6YkrqGJI5yYnsOfv9KlSgRm5irjKA7eXfWJMx7sNBvoO2tU+KBsJ7n8hsPvUqUIDU3OtYzVKlMA2/h2tlvEVkb/KwKtB12IkTO/T1FCPcn96DsKlSkgNZrM1ipTAzNSalSiwME1JqVKVgf/Z">
+            <div>
+                <div>
+                <h1 class="h32">Leveraging Big Data for Strategic Insights: A Methodological Framework</h1>
+
+                <p>
+                    <h3 class="h32">Introduction:</h3>
+                    <p>
+                        In today's data-driven world, organizations across various sectors are increasingly turning to big data analytics to gain strategic insights and drive decision-making. This methodological framework outlines the best practices and steps for effectively utilizing big data to extract actionable insights and create value.
+                    </p>             
+                </p>
+                <p>
+                    <h3 class="h32">Define Strategic Objectives:</h3>
+                    <p>
+                        Begin by clearly defining strategic objectives or key business questions that big data analytics aims to address. These objectives should align with organizational goals and priorities, such as improving operational efficiency, enhancing customer experience, or optimizing resource allocation.
+                    </p>               
+                </p>
+                <p>
+                    <h3 class="h32">Identify Data Sources and Collection:</h3>
+                    <p>
+                        Identify relevant data sources that can provide valuable insights to support strategic objectives. These may include internal sources (e.g., transactional data, CRM databases) and external sources (e.g., social media, market research reports). Implement robust data collection processes to gather data efficiently and ensure data quality.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Data Preprocessing and Cleaning:</h3>
+                    <p>
+                        Clean and preprocess the collected data to ensure its quality, consistency, and relevance for analysis. This involves tasks such as data cleaning, deduplication, normalization, and transformation to prepare the data for analysis.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Select Appropriate Analytics Techniques:</h3>
+                    <p>
+                         Choose appropriate analytics techniques based on the nature of the data and the objectives of the analysis. This may include descriptive analytics to summarize and visualize data patterns, predictive analytics to forecast future trends, or prescriptive analytics to recommend optimal actions.
+                    </p>            
+                </p>
+                <p>
+                    <h3 class="h32">Apply Advanced Analytics Models:</h3>
+                    <p>
+                        Apply advanced analytics models and algorithms to extract insights and patterns from the data. This may involve techniques such as machine learning, data mining, natural language processing, and sentiment analysis to uncover hidden correlations and predictive relationships.
+                    </p>             
+                </p>
+                <p>
+                    <h3 class="h32">Visualization and Interpretation:</h3>
+
+                    <p>
+                        Visualize and interpret the analysis results using data visualization techniques such as charts, graphs, and dashboards. This enables stakeholders to understand complex data patterns and insights effectively and facilitates data-driven decision-making.
+                    </p>
+                </p>    
+                <p>
+                    <h3 class="h32">Iterative Analysis and Refinement:</h3>
+                    <p>
+                        Adopt an iterative approach to analysis, allowing for continuous experimentation, learning, and refinement of analytical models and strategies. Monitor the performance of analytics models and adjust them based on feedback and new data to improve accuracy and relevance.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Ensure Data Privacy and Security:</h3>
+                    <p>
+                        Implement robust data privacy and security measures to protect sensitive information and comply with regulatory requirements. This includes encryption, access controls, anonymization, and regular audits to safeguard data integrity and confidentiality.
+                    </p>              
+                </p>
+                <p>
+                    <h3 class="h32">Measure Impact and Value Creation:</h3>
+                    <p>
+                        Continuously monitor and measure the impact of big data analytics initiatives on key performance indicators (KPIs) and strategic objectives. This enables organizations to assess the effectiveness of their analytics efforts and identify opportunities for further optimization and value creation.
+                    </p>        
+                </p>
+                <p>
+                    <h1 class="h32">Conclusion:</h1>
+                    <p>
+                        By following this methodological framework, organizations can harness the power of big data analytics to gain strategic insights, drive innovation, and achieve competitive advantage in today's dynamic business environment. Effective utilization of big data can enable organizations to make informed decisions, optimize processes, and unlock new opportunities for growth and success.
+                
+                    </p>
+                </p>
+                </div>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS49q6QANcgrP1v4WYyWsdQPninNpn1j72c7w&s">
+            <div>
+                <div>
+                <h1 class="h32">Charting the Course: Navigating Big Data's Evolution in 2024</h1>
+                
+                <p>
+                    In 2024, big data continues to play a crucial role across various industries, driving decision-making, innovation, and efficiency improvements. Here are some trends and developments you might expect to see in the realm of big data in 2024:
+                </p>
+                <p>
+                        <h3 class="h32">Advanced Analytics and AI/ML Integration:</h3>
+                        <p>
+                            Companies are increasingly leveraging advanced analytics techniques, including machine learning and artificial intelligence, to derive insights from massive datasets. This integration allows for more accurate predictions, personalized recommendations, and automation of various processes.
+                        </p>        
+                </p>
+                <p>    
+                        <h3 class="h32">Edge Computing:</h3> 
+                        <p>
+                            With the proliferation of Internet of Things (IoT) devices and the need for real-time data processing, edge computing is becoming more prevalent. This approach involves processing data closer to the source (at the edge of the network) rather than in centralized data centers, reducing latency and bandwidth usage.
+               
+                        </p>    
+                </p>
+                <p>    
+                        <h3 class="h32">Privacy and Ethical Considerations:</h3>
+                        <p>
+                            As data collection and analysis become more extensive, privacy concerns and ethical considerations surrounding data usage continue to grow. Companies are investing in robust data governance frameworks and adopting privacy-preserving technologies to ensure compliance with regulations and maintain consumer trust.
+                        </p>        
+                </p>
+                <p>   
+                        <h3 class="h32">Blockchain Integration:</h3> 
+                        <p>
+                            Blockchain technology is being explored for its potential to enhance data security, integrity, and transparency. By leveraging blockchain, organizations can create immutable and auditable records of data transactions, addressing concerns related to data tampering and unauthorized access.
+                        </p>        
+                </p>
+                <p>
+                        <h3 class="h32">Data Democratization:</h3>
+                        <p>
+                            There is a growing emphasis on democratizing access to data within organizations, enabling employees across various departments to access and analyze data independently. This trend fosters a data-driven culture and empowers decision-makers at all levels to make informed choices based on data insights.
+                        </p>
+                </p>
+                <p>
+                        <h3 class="h32">Augmented Analytics:</h3> 
+                        <p>
+                            Augmented analytics platforms, which combine machine learning and natural language processing capabilities, are gaining traction. These platforms enable users with varying levels of technical expertise to interact with data through intuitive interfaces and receive actionable insights in plain language.
+                        </p>
+                </p>
+                <p>
+                        <h3 class="h32">Focus on Data Quality and Governance:</h3> 
+                        <p>
+                            In light of increasing data volumes and complexity, ensuring data quality and implementing robust governance practices are paramount. Organizations are investing in data quality management tools and establishing governance frameworks to maintain the integrity, accuracy, and consistency of their data assets.
+                        </p>
+                </p>
+                <p>
+                    <h3 class="h32">Hybrid and Multi-Cloud Architectures:</h3>
+                    <p>
+                        To address scalability, flexibility, and resilience requirements, organizations are adopting hybrid and multi-cloud architectures for their big data infrastructure. This approach allows them to leverage the strengths of multiple cloud providers while avoiding vendor lock-in and mitigating risks associated with downtime and data loss.
+                    </p>
+                </p>
+                <p>
+                    Overall, big data in 2024 continues to evolve rapidly, driven by advancements in technology, changing business needs, and regulatory landscapes. Organizations that effectively harness the power of big data stand to gain a competitive advantage in their respective markets.
+                </p>
+                </div>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVdYuLQDdLgQ9R5YzgN-tFP_wbUmxdmuWfw&s">
+            <div>
+                <div>
+                <h1>CONCLUSION:</h1>
+                <p>
+                    In conclusion, big data continues to be a transformative force in 2024, shaping industries, driving innovation, and reshaping the way organizations operate. Several key themes emerge from the current landscape:
+                </p>
+                <p>     
+                    <h3 class="h32">Impactful Insights:</h3>
+                    <p>
+                        Big data analytics, powered by advanced technologies such as artificial intelligence and machine learning, are enabling organizations to extract actionable insights from vast and complex datasets. These insights drive informed decision-making, uncover hidden patterns, and fuel innovation across various sectors.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Data Privacy and Ethics:
+                    <p>
+                        With the increasing volume and sensitivity of data being collected, privacy concerns and ethical considerations remain at the forefront. Organizations are prioritizing data governance and implementing measures to ensure compliance with regulations while safeguarding individual privacy rights.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Real-time Processing:</h3> 
+                    <p>
+                        The demand for real-time data processing and analysis is driving the adoption of edge computing and streaming analytics solutions. These technologies enable organizations to derive insights and take action on data as it is generated, facilitating faster response times and enhancing operational efficiency.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Data Democratization:</h3> 
+                    <p>
+                        Empowering employees at all levels with access to data and analytics tools is fostering a culture of data-driven decision-making within organizations. Data democratization promotes collaboration, innovation, and agility, enabling teams to harness the full potential of data to achieve business objectives.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Security and Trust:</h3> 
+                    <p>
+                        As data becomes increasingly valuable, ensuring its security and integrity is paramount. Organizations are investing in robust cybersecurity measures, including encryption, authentication, and access controls, to protect against data breaches and unauthorized access.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Hybrid and Multi-Cloud Architectures:</h3> 
+                    <p>
+                        Hybrid and multi-cloud architectures are gaining traction as organizations seek to leverage the scalability, flexibility, and resilience offered by multiple cloud providers. This approach enables organizations to optimize cost, mitigate risks, and avoid vendor lock-in while meeting their big data infrastructure needs.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Continuous Evolution:</h3> 
+                    <p>
+                        The landscape of big data is dynamic and constantly evolving, driven by technological advancements, changing business requirements, and regulatory developments. Organizations must remain agile and adaptable to harness the full potential of big data and stay ahead in an increasingly competitive marketplace.
+                    </p>
+                </p>
+                <p>
+                    In essence, big data in 2024 represents not just a technological phenomenon but a cultural and organizational shift towards data-driven decision-making and innovation. Embracing the opportunities and addressing the challenges presented by big data will be essential for organizations seeking to thrive in the digital age.
+                </p>
+                </div>
+        </div>
+        <a href="evoluation-tecnhlogy">NEXT</a>
+    </section>
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>

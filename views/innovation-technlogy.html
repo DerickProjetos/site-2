@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content"> 
+        <h1 class="title">Tech Evolution: Navigating the Transformative Journey of Technology</h1>
+        <img src="data:image/png;base64,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">
+        <div>
+            <h1 class="h32">
+                explain the concept of innovation and its relationship with technology.
+            </h1>
+            <div>
+            <p>
+                <h3 class="h32">Innovation:</h3>
+                <p>
+                    Innovation refers to the process of creating new ideas, methods, products, or services that provide value or address a need in society. It involves transforming creative ideas into practical solutions that improve people's lives or enhance existing processes. Innovation can occur in various fields, including technology, business, science, arts, and social sectors.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Technology:</h3>
+                <p>
+                    Technology encompasses the tools, techniques, systems, and processes used to achieve specific objectives or solve problems. It includes both physical devices and intangible systems, such as software and algorithms. Technology plays a crucial role in driving innovation by enabling the creation of new products, services, and processes that enhance efficiency, productivity, and convenience.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">The Relationship between Innovation and Technology:</h3>
+                <p>
+                    Enabler of Innovation:** Technology serves as a catalyst for innovation by providing the necessary tools and infrastructure to develop and implement new ideas. For example, advancements in computing technology have enabled the development of innovative software applications and digital services.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Driver of Change:</h3>
+                <p>
+                    Technological advancements often lead to disruptive innovations that transform industries and create new opportunities. For instance, the rise of the internet and mobile technology has revolutionized communication, commerce, and entertainment, giving rise to entirely new business models and markets.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Iterative Process:</h3>
+                <p>
+                    Innovation and technology are interconnected in an iterative process of improvement and refinement. Innovations often lead to the development of new technologies, which, in turn, enable further innovation. This cycle of innovation drives progress and fosters continuous improvement in various domains.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Adoption and Diffusion:</h3>
+                <p>
+                    Successful innovation often depends on the widespread adoption and diffusion of new technologies. Innovators must not only develop groundbreaking ideas but also ensure that they are accessible, affordable, and user-friendly for widespread adoption.
+                </p>
+            </p>
+            <p>
+                <h3 class="h32">Ethical Considerations:</h3>
+                <p>
+                    The rapid pace of technological innovation raises ethical and societal concerns, such as privacy, security, and equity. Innovators must consider the potential impact of their technologies on individuals, communities, and the environment, and take proactive measures to address these concerns.
+                </p>
+            </p>
+            <p>
+                In summary, innovation and technology are closely intertwined concepts that drive progress and change in society. By leveraging technological advancements and fostering creativity and experimentation, innovators can develop transformative solutions to address complex challenges and improve the quality of life for people around the world.
+            </p>
+            </div>
+        </div>
+        <img src="data:image/jpeg;base64,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">
+        <div>
+            <h1 class="h32">
+                Using innovation and technology in your work can involve several steps:
+            </h1>
+            <div>
+                <p>
+                    <h3 class="h32">Identify Opportunities:</h3>
+                    <p>
+                        Look for areas within your work where innovation and technology can make a difference. This could involve streamlining processes, improving efficiency, enhancing customer experience, or developing new products/services.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Research and Stay Informed:</h3>
+                    <p>
+                        Keep yourself updated with the latest technological trends and innovations relevant to your field of work. Subscribe to industry publications, attend conferences, and network with professionals to stay informed about new technologies and best practices.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Experiment and Test:</h3> 
+                    <p>
+                        Don't be afraid to experiment with new technologies and innovative ideas. Start small by testing out new tools or approaches in a controlled environment to gauge their effectiveness and potential impact on your work.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Collaborate with Others:</h3> 
+                    <p>
+                        Collaboration is key to fostering innovation. Work with colleagues, partners, or experts in relevant fields to brainstorm ideas, share knowledge, and pool resources to implement innovative solutions.
+                    </p>
+                </p>
+                <p> 
+                    <h3 class="h32">Seek Feedback:</h3> 
+                    <p>
+                        Solicit feedback from stakeholders, customers, or end-users to validate your ideas and ensure that your innovations address real needs and pain points. Use feedback to iterate and refine your solutions continuously.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Embrace a Culture of Innovation:</h3>
+                    <p>
+                        Cultivate a culture of innovation within your organization or team by encouraging creativity, risk-taking, and continuous learning. Reward and recognize employees who contribute innovative ideas and initiatives. 
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Invest in Training and Development:</h3>
+                    <p>
+                        Invest in training programs or workshops to enhance your skills and knowledge in areas related to innovation and technology. Develop expertise in relevant tools, methodologies, or emerging technologies to better leverage them in your work.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Monitor and Measure Impact:</h3>
+                    <p>
+                        Regularly monitor the impact of your innovations on key performance indicators (KPIs) relevant to your work. Track metrics such as productivity gains, cost savings, customer satisfaction, or revenue growth to assess the effectiveness of your initiatives.
+                    </p>
+                </p>
+                <p>
+                    <h3 class="h32">Stay Adaptive:</h3> 
+                    <p>
+                        Remain flexible and adaptable in your approach to innovation and technology. Embrace change and be willing to pivot or adjust your strategies based on evolving market trends, technological advancements, or feedback from stakeholders.
+                    </p>
+                </p>
+                <p>
+                    By following these steps and integrating innovation and technology into your work, you can drive positive change, improve outcomes, and stay ahead in today's rapidly evolving business landscape.
+                </p>
+            </div>
+            </div>
+            <img src="data:image/jpeg;base64,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">
+"
+            <div>
+                <h1 class="h32">
+                    Innovation and technology can be powerful tools for generating income and building wealth. Here are several ways you can leverage innovation and technology to make money:
+                </h1>
+                <div>
+                    <p>
+                        <h3 class="h32">Entrepreneurship:</h3>
+                        <p>Start your own business based on an innovative idea or technological solution. Identify a market need or problem, and develop a product or service that addresses it. Whether it's creating a new app, launching an e-commerce store, or offering a unique service, entrepreneurship allows you to capitalize on your innovative ideas and potentially generate significant income.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">E-commerce:</h3>
+                        <p>
+                            Tap into the growing e-commerce market by selling products online. Set up an online store or leverage existing platforms like Amazon, eBay, or Shopify to reach a wider audience and generate sales. Innovate in areas such as product selection, customer experience, or fulfillment to stand out in a competitive market.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Freelancing and Gig Economy:</h3>
+                        <p>
+                            Offer your skills and expertise as a freelancer or independent contractor in fields such as graphic design, writing, programming, or digital marketing. Use online freelancing platforms like Upwork, Fiverr, or Freelancer to find clients and projects, and leverage technology to deliver high-quality work efficiently.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Investing in Technology Stocks:</h3> 
+                        <p>
+                            Invest in stocks of innovative companies that are driving technological advancements and disrupting industries. Research and identify promising tech companies with strong growth potential, and consider investing in them through stocks or exchange-traded funds (ETFs) to potentially earn returns as they grow and succeed.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Developing Digital Products:</h3> 
+                        <p>
+                            Create and sell digital products such as e-books, online courses, software tools, or digital artwork. Leverage your expertise or creative talents to develop valuable digital assets that people are willing to pay for, and use technology platforms like Gumroad, Teachable, or Etsy to market and sell your products. 
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Online Content Creation:</h3> 
+                        <p>
+                            Share your knowledge and expertise by offering online education courses, webinars, or consulting services in your area of specialization. Use technology platforms like Zoom, Skype, or Thinkific to deliver 
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Remote Work Opportunities:</h3> 
+                        <p>
+                            Explore remote work opportunities in fields such as software development, digital marketing, customer support, or virtual assistance. Leverage technology tools and communication platforms to collaborate with remote teams or clients, and offer your services on freelance platforms or remote job boards to earn income from anywhere in the world.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Blockchain and Cryptocurrency:</h3> 
+                        <p>
+                            Explore opportunities in the blockchain and cryptocurrency space, such as investing in cryptocurrencies, trading digital assets, mining cryptocurrencies, or developing blockchain-based applications and solutions. Stay informed about the latest trends and developments in the crypto market to identify profitable opportunities.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Online Education and Consulting:</h3> 
+                        <p>
+                            Share your knowledge and expertise by offering online education courses, webinars, or consulting services in your area of specialization. Use technology platforms like Zoom, Skype, or Thinkific to deliver virtual sessions and connect with clients or students worldwide.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Innovative Side Projects:</h3> 
+                        <p>
+                            Pursue innovative side projects or passion projects that have the potential to generate income. Whether it's creating a niche blog, developing a hobby into a profitable venture, or launching a creative project on crowdfunding platforms like Kickstarter or Indiegogo, explore unconventional ideas and leverage technology to turn them into income-generating opportunities.
+                        </p>
+                    </p>
+                    <p>
+                        Remember that success in leveraging innovation and technology to make money often requires creativity, persistence, and adaptability. Stay open to new ideas, continuously learn and improve your skills, and be willing to take calculated risks to seize opportunities for financial growth and prosperity.
+                    </p>
+                </div>
+            </div>
+            <img src="data:image/jpeg;base64,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">
+            <div>
+                <h1 class="h32">In conclusion:</h1>
+                <div>
+                    <p>
+                        1 - innovation and technology offer vast opportunities for individuals to generate income, build wealth, and achieve financial success. By embracing innovation and leveraging technology in various aspects of life and work, individuals can unlock new possibilities, enhance productivity, and capitalize on emerging trends and opportunities in today's digital economy. Whether through entrepreneurship, e-commerce, freelancing, investing, digital product creation, online content creation, blockchain and cryptocurrency, remote work, education, or innovative side projects, there are countless avenues for leveraging innovation and technology to make money.
+                    </p>
+                    <p>
+                        2 - However, it's essential to approach these opportunities with creativity, diligence, and a willingness to adapt to changing market dynamics. Success in leveraging innovation and technology for financial gain requires continuous learning, experimentation, and perseverance. Moreover, it's crucial to balance financial pursuits with ethical considerations, environmental sustainability, and the well-being of oneself and others.
+                    </p>
+                    <p>
+                        3 - In summary, by harnessing the power of innovation and technology while staying mindful of ethical and societal implications, individuals can unlock their full potential, create value, and achieve financial prosperity in today's interconnected and rapidly evolving world.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="ti">NEXT</a>
+        <h1 class="count">loading code....</h1>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            let count = document.querySelector(".count")
+            socket.on("chat", async(msg)=>
+            {
+
+                 count.innerHTML = await msg
+
+            
+            })
+            socket.emit("IsConnect", 10)
+        </script>
+    </section>
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>

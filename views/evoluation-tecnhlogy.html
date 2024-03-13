@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONDONGO NOTICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bar.css">
+    <style>
+        .bar menu{
+
+            display: line;
+           
+        }
+       .submenu{
+              
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              background: #fff8fc;
+              border-bottom: 3px solid #57748088;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+       @media screen and (max-width: 700px) {
+        .articles{
+               display: none;
+            }
+            .posts{
+                width: 100%;
+            }
+            
+         
+            .bar .menu{
+                display: none;
+            }
+            .bar .index{
+                font-size:60%;
+                color:#000000;
+                width: 50%;
+                text-decoration: none;
+    
+            }
+            .bar .hamb{
+                 margin-right: 10%;
+            }
+        
+       
+        }
+        @media screen and (min-width: 701px){
+            .bar .hamb{
+                display: none;
+            }
+            .submenu{
+              background: #fff8fc;
+              display: none;
+              position: fixed;
+              width: 100%;
+              left: -100%;
+ 
+          }
+          .submenu a{
+                  padding: 8%;
+                  width: 100%;
+                  font-size: 80%;
+                  text-align: center;
+                  border-bottom: 1px solid #57748088;
+              }
+        }
+    </style>
+</head>
+<body>
+    <nav class="bar">
+        <a class="index" href="/"><h1>MONDONGO NOTICES</h1></a>
+        <img href="image/menu.png">
+
+        <div class="menu">
+            <a href="about">ABOUT</a>
+            <a href="contact">CONTACT</a> 
+        </div>
+        <img class="hamb" src="image/menu.png">
+      
+    </nav>
+    <section class="submenu">
+        <a href="about">ABOUT</a>
+        <a href="contact">CONTACT</a> 
+    </section>
+    <section class="content"> 
+        <h1 class="title">Evolution of Technology: From Primitive Tools to Emerging Innovations</h1>
+            <img src="data:image/jpeg;base64,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">
+    
+                <div>
+                    <p>
+                        The evolution of technology refers to the gradual development and advancement of tools, systems, and techniques used by humans to solve problems, accomplish tasks, and improve their lives. This evolution can be traced back to the earliest human civilizations and has accelerated dramatically in recent centuries, especially with the advent of the Industrial Revolution and the Information Age.
+                    </p>
+                    <h1 class="h32">
+                        Here's a breakdown of key aspects of technology evolution:
+                    </h1>
+                    <div>
+                    <p>
+                        <h3 class="h32">Primitive Tools:</h3> 
+                        <p>
+                            The earliest humans used simple tools made from stone, wood, and bone to hunt, gather food, and build shelters. These tools evolved over time, becoming more refined and specialized.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Agricultural Revolution:</h3> 
+                        <p>
+                            About 10,000 years ago, humans transitioned from nomadic lifestyles to settled agricultural communities. This revolutionized food production, leading to surplus food, population growth, and the emergence of complex societies.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Industrial Revolution:</h3> 
+                        <p>
+                            In the late 18th and early 19th centuries, the Industrial Revolution marked a significant shift from agrarian economies to industrialized societies. Key innovations included the steam engine, mechanized textile production, and advances in transportation and communication.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Electrical and Mechanical Engineering:</h3> 
+                        <p>
+                            The late 19th and early 20th centuries saw further advancements in electrical engineering, leading to the widespread adoption of electricity, the invention of the telephone, and the development of early computing machines.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Digital Revolution:</h3>
+                        <p>
+                            The latter half of the 20th century saw the rise of the digital revolution, characterized by the invention of the transistor, the development of integrated circuits, and the creation of the internet. This period also saw the emergence of personal computers, smartphones, and other digital technologies that transformed communication, commerce, and entertainment.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Information Age:</h3> 
+                        <p>
+                            Beginning in the late 20th century and continuing into the 21st century, the Information Age brought about unprecedented access to information and the proliferation of digital technologies in all aspects of life. This includes advancements in artificial intelligence, robotics, biotechnology, nanotechnology, and renewable energy.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Emerging Technologies:</h3> 
+                        <p>
+                            Currently, technology continues to evolve rapidly, with ongoing developments in areas such as quantum computing, augmented reality, virtual reality, blockchain, and gene editing. These emerging technologies have the potential to further revolutionize industries and reshape society in profound ways. 
+                        </p>
+                        <p>   
+                            Throughout history, the evolution of technology has been driven by human curiosity, creativity, and the desire to improve efficiency and quality of life. It has also led to both positive and negative consequences, including economic growth, increased productivity, environmental challenges, and social inequality. Understanding the evolution of technology can provide insights into the past, present, and future of human civilization.
+                        </p>
+                    </p>
+                    </div>
+                </div>
+                <img src="data:image/jpeg;base64,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">
+                <div>
+                    <div>
+                    <p>
+                        As of 2024, the evolution of technology in industry continues to shape the way businesses operate, innovate, and compete. Several key trends and advancements are influencing various sectors:
+                    </p>
+                    <p>
+                        <h3 class="h32">Industry 4.0 and Smart Manufacturing:</h3> 
+                        <p>
+                            The integration of digital technologies such as the Internet of Things (IoT), artificial intelligence (AI), cloud computing, and big data analytics has led to the emergence of Industry 4.0. Smart manufacturing processes are becoming more interconnected and automated, leading to improved efficiency, productivity, and flexibility in production.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Advanced Robotics and Automation:</h3> 
+                        <p>
+                             Robotics and automation technologies are advancing rapidly, enabling industries to automate repetitive tasks, enhance precision, and increase output. Collaborative robots (cobots), capable of working alongside humans safely, are being increasingly adopted in manufacturing, logistics, and other industries.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Digital Twins and Predictive Maintenance:</h3> 
+                        <p>
+                            Digital twin technology, which creates virtual replicas of physical assets or processes, is being utilized for predictive maintenance in industrial settings. By monitoring real-time data from equipment and systems, businesses can predict and prevent potential failures, reducing downtime and maintenance costs.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Additive Manufacturing (3D Printing):</h3> 
+                        <p>
+                            Additive manufacturing technologies, such as 3D printing, are revolutionizing the manufacturing process by enabling rapid prototyping, customization, and on-demand production. Industries ranging from aerospace and automotive to healthcare are leveraging 3D printing for product development and manufacturing.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Augmented Reality (AR) and Virtual Reality (VR):</h3> 
+                        <p>
+                            AR and VR technologies are finding applications in industrial training, maintenance, and design. AR-enabled smart glasses provide hands-free access to information and instructions for workers, while VR simulations allow for immersive training experiences and virtual prototyping.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Blockchain in Supply Chain Management:</h3> 
+                        <p>
+                            Blockchain technology is being explored for its potential to enhance transparency, traceability, and security in supply chain management. By creating immutable records of transactions and ensuring data integrity, blockchain can help mitigate fraud, streamline logistics, and improve trust among supply chain partners.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Sustainable and Green Technologies:</h3> 
+                        <p>
+                            With increasing concerns about environmental sustainability, industries are investing in green technologies and practices to reduce their carbon footprint and resource consumption. This includes advancements in renewable energy, energy-efficient manufacturing processes, and the development of eco-friendly materials.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Cybersecurity and Data Privacy:</h3> 
+                        <p>
+                            As industries become more digitally connected, cybersecurity and data privacy are paramount concerns. Businesses are investing in robust cybersecurity measures, including encryption, multi-factor authentication, and threat detection systems, to safeguard their sensitive data and operations from cyber threats.
+                        </p>
+                    </p>
+                    <p>
+                        Overall, the evolution of technology in industry in 2024 is characterized by digitization, automation, connectivity, and sustainability. Businesses that embrace these advancements can gain a competitive edge, drive innovation, and adapt to the rapidly changing landscape of the modern industrial sector.
+                    </p>
+                    </div>
+                </div>
+                <img src="data:image/jpeg;base64,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">
+                <div>
+                    <div>
+                    <p>
+                        The evolution of technology on the social web has profoundly transformed the way individuals interact, communicate, and share information. Here's a look at some key aspects of this evolution:
+                    </p>
+                    <p>
+                        <h3 class="h32">Social Media Platforms:</h3> 
+                        <p>
+                            The rise of social media platforms such as Facebook, Twitter, Instagram, and LinkedIn has revolutionized how people connect and share content online. These platforms have become integral parts of daily life for billions of users worldwide, enabling real-time communication, networking, and content distribution.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Mobile Connectivity:</h3> 
+                        <p>
+                            The widespread adoption of smartphones and mobile devices has made access to social media and the internet more pervasive and convenient. Mobile apps and mobile-optimized websites have empowered users to stay connected and engage with social networks anytime, anywhere.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Multimedia Sharing:</h3> 
+                        <p>
+                            Social media platforms have evolved beyond text-based communication to support the sharing of multimedia content such as photos, videos, and live streams. This shift has enriched user experiences and facilitated new forms of expression, creativity, and storytelling.   
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Personalization and Algorithms:</h3> 
+                        <p>
+                            Social media algorithms use machine learning and data analytics to personalize content feeds based on user preferences, behaviors, and interests. While this can enhance user engagement and relevance, it also raises concerns about filter bubbles, echo chambers, and algorithmic bias.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Ephemeral Content:</h3> 
+                        <p>
+                            The popularity of ephemeral content on platforms like Snapchat and Instagram Stories has changed how users share and consume content. Ephemeral content is temporary and disappears after a set period, fostering a sense of urgency and authenticity in online interactions.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Influencer Culture:</h3> 
+                        <p>
+                            Social media influencers have emerged as powerful voices and tastemakers, leveraging their online presence to shape trends, promote brands, and influence consumer behavior. Influencer marketing has become a lucrative industry, with brands partnering with influencers to reach targeted audiences.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Privacy and Security:</h3> 
+                        <p>
+                            Concerns about privacy, data security, and online safety have become prominent issues in the social web landscape. Instances of data breaches, misinformation, cyberbullying, and online harassment have raised awareness about the need for robust privacy policies, security measures, and digital literacy initiatives.
+                        </p>
+                    </p>
+                    <p>
+                        <h3 class="h32">Emerging Platforms and Trends:</h3> 
+                        <p>
+                            The social web continues to evolve with the emergence of new platforms and trends. Video-sharing platforms like TikTok have gained popularity, while niche communities on platforms like Reddit and Discord offer spaces for specialized interests and discussions. Additionally, emerging technologies such as augmented reality (AR) and virtual reality (VR) are poised to transform social experiences in the future.
+                        </p>
+                    </p>
+                    <p>
+                        Overall, the evolution of technology on the social web has facilitated unprecedented connectivity, creativity, and community-building while also presenting challenges related to privacy, misinformation, and digital well-being. As technology continues to advance, it will be essential to address these challenges and leverage the potential of the social web for positive social impact and meaningful human connection.
+                    </p>
+                    </div>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrZMLHHyEeRwRIntdKb6mZmNBpniah0hBnJw&s">
+                <div>
+                    <h1 class="h32">In conclusion:</h1>
+                    <div>
+                        <p>
+                            1 - the evolution of technology across various domains, including industry and the social web, has profoundly shaped human society, revolutionizing how we work, communicate, and interact with one another. From the invention of primitive tools to the emergence of advanced digital technologies, this journey has been marked by innovation, adaptation, and transformative change.
+                        </p>
+                        <p>
+                            2 - In industry, technologies such as automation, artificial intelligence, and additive manufacturing have driven efficiencies, productivity, and innovation, leading to smarter, more interconnected manufacturing processes. These advancements have not only improved economic competitiveness but also paved the way for sustainable practices and green technologies, addressing pressing environmental challenges.
+                        </p>
+                        <p>
+                            3 - On the social web, the proliferation of social media platforms, mobile connectivity, and multimedia sharing has democratized communication, enabling individuals to connect, collaborate, and share information on a global scale. However, challenges related to privacy, security, and digital well-being have also emerged, underscoring the importance of responsible technology use, robust regulations, and digital literacy initiatives.
+                        </p>
+                        <p>
+                            4 - As we navigate the complexities of the technological landscape, it is essential to prioritize ethical considerations, inclusivity, and the equitable distribution of benefits. By fostering collaboration between stakeholders, investing in education and skills development, and harnessing the potential of emerging technologies for positive social impact, we can ensure that the evolution of technology continues to enhance human well-being, drive progress, and create a more sustainable future for generations to come.
+                        </p>
+                    </div>
+                </div>
+            
+        <a href="innovation-technlogy">NEXT</a>
+    </section>
+    <h4>©2023 - 2024 copyright: Mondongo Industry </h4>
+    <script>
+        let visible=true;
+        let hamb = document.querySelector(".hamb")
+        let submenu = document.querySelector(".submenu")
+        hamb.addEventListener("click", ()=>{
+            if(visible){
+                submenu.style.left = "0%"
+                visible=false;
+            }else{
+                submenu.style.left = "-100%"
+                visible=true
+            }
+            
+
+        })
+   
+   
+    </script>
+</body>
+</html>
