@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://mondongo.onrender.com/sitemap.xml
+Sitemap: https://bongbong-blog.onrender.com/sitemap.xml
